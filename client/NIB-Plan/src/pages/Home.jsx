@@ -1,4 +1,5 @@
 //import React from 'react'
+import {motion} from "motion/react";
 import { NavLink } from "react-router-dom";
 //import bg_image from "../assets/bg_image1.jpg";
 import bg_image2 from "../assets/bg_image2.jpg";
@@ -7,6 +8,7 @@ import { experience } from "../assets/assets.js";
 
 const Home = () => {
   return (
+
     <div className = "flex flex-col ">
 
       <div   style={{
@@ -15,6 +17,12 @@ const Home = () => {
           backgroundPosition: "center",
           height: "80vh", // full screen height
         }} >
+           <motion.section
+            intial={{opacity: 0, x : -100}}
+            whileInView={{opacity: 1, x: 0}}
+            transition={{duration: 0.8}}
+            viewport={{once:true}}>,/</motion.section>
+
               <div className = "flex  flex-col pt-40 p-3">
                     <p className = "text-4xl font-bold text-white p-5">
                     Your Partner in <br/>
@@ -37,6 +45,7 @@ const Home = () => {
                     </div>
               </div>
       </div>
+
 
       <div className = "bg-gray-100">
 
@@ -61,9 +70,10 @@ const Home = () => {
 
 
           {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col border border-white bg-white rounded items-center justify-center p-3">
+            <div key={index} className="flex flex-col border border-white bg-white rounded-xl items-center justify-center p-2
+            transition duration-200 hover:-translate-y-0.5 hover:shadow-xl">
               <div className = "flex flex-col gap-4 items-center justify-center p-2">
-                <img src={skill.image} className="h-20 w-30" />
+                <img src={skill.image} className="h-15 w-20" />
                 <h3 className="text-xl font-bold text-blue-900">{skill.title}</h3>
               </div>
 
@@ -110,7 +120,8 @@ const Home = () => {
       </div>
 
     </div>
-  )
+
+   )
 }
 
 export default Home

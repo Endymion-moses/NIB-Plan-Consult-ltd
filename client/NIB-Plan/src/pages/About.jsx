@@ -42,11 +42,12 @@ const About = () => {
         </p>
 
         {/* Target/Core Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full py-4 ">
           {target.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col border border-gray-200 bg-gray-50 items-start justify-start gap-4 p-5 sm:p-6 rounded-lg shadow-sm"
+              className="flex flex-col border border-gray-200 bg-gray-50 items-start justify-start gap-4 p-5 sm:p-6 rounded-lg shadow-sm
+              transition duration-200 hover:-translate-y-0.5 hover:shadow-xl"
             >
               <div className="flex gap-3 items-center justify-center">
                 {item.image && <img src={item.image} alt={item.title} className="h-12 sm:h-16 w-auto object-contain"/>}

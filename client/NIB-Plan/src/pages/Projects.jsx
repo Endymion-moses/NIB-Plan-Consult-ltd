@@ -1,6 +1,6 @@
 //import React from 'react'
 import { useSearchParams } from "react-router-dom";
-import {TABS, projects} from "../services/projectServices.js";
+import {TABS, projects, countByStatus} from "../services/projectServices.js";
 import bg_image3 from '../assets/bg_image3.png'
 
 
@@ -14,11 +14,20 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.status === activeTab);
 
-
+    /*
     const getTabCount = (tab) => {
     if (tab === "All") {
       return projects.length;
-    }}
+    }}*/
+
+      const getTabCount = (tab) => {
+    if (tab === "All") {
+      return projects.length;
+    }
+
+    return countByStatus(projects, tab);
+  };
+
   return (
     <div>
                            <div
@@ -44,7 +53,7 @@ const Projects = () => {
                                   key={tab}
                                   type="button"
                                   onClick={() => setSearchParams({ tab })}
-                                  className={`rounded-full border px-5 py-2 text-sm font-semibold transition whitespace-nowrap ${
+                                  className={`rounded-xl w-45 border px-5 py-2 text-sm font-semibold transition whitespace-nowrap ${
                                     isActive
                                       ? "border-blue-900 bg-blue-900 text-white"
                                       : "border-slate-200 bg-slate-50 text-slate-600 hover:bg-white"

@@ -9,7 +9,7 @@ export const projects= [
     date:"20th-August-2010 to 30th-September-2011",
     service:"design of 25m to 25m span bridges from Rawa to Mtendewa rivers including supervision of the construction works",
     image:project_image,
-    status:"highway"
+    status:"Highway"
  }
 ,
 
@@ -19,7 +19,7 @@ export const projects= [
     date:"20th-August-2010 to 30th-September-2011",
     service:"design of 25m to 25m span bridges from Rawa to Mtendewa rivers including supervision of the construction works",
     image:project_image,
-    status:"bridge"
+    status:"Bridges"
  },
 
  {
@@ -28,7 +28,7 @@ export const projects= [
     date:"20th-August-2010 to 30th-September-2011",
     service:"design of 25m to 25m span bridges from Rawa to Mtendewa rivers including supervision of the construction works",
     image:project_image,
-    status:"water"
+    status:"Water Projects"
  },
 
  {
@@ -37,7 +37,10 @@ export const projects= [
     date:"20th-August-2010 to 30th-September-2011",
     service:"design of 25m to 25m span bridges from Rawa to Mtendewa rivers including supervision of the construction works",
     image:project_image,
-    status:"bridge"
+    status:"Bridges"
  }
 
 ]
+
+export const countByStatus = (records, status) =>
+  records.filter((record) => record.status === status).length;
