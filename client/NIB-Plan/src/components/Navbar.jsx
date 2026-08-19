@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ theme, onThemeToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -30,6 +30,18 @@ const Navbar = () => {
           <NavLink to="/projects" className={linkStyles}>Projects</NavLink>
           <NavLink to="/contact" className={linkStyles}>Contact</NavLink>
         </div>
+
+        <button
+          type="button"
+          onClick={onThemeToggle}
+          className="ml-auto mr-2 rounded-full border border-blue-200 px-3 py-2 text-sm font-semibold text-blue-900 transition hover:bg-blue-100 md:ml-6 md:mr-0"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          aria-pressed={theme === "dark"}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          <span aria-hidden="true">{theme === "dark" ? "☀" : "☾"}</span>
+          <span className="ml-1.5 hidden sm:inline">{theme === "dark" ? "Light" : "Dark"}</span>
+        </button>
 
         {/* Mobile Hamburger Button */}
         <button
