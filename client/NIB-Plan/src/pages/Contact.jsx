@@ -12,9 +12,9 @@ const Contact = () => {
                     backgroundPosition: "center",
 
                   }} >
-                    <div className='pt-30 items-center justify-center pl-100 '>
-                       <h1 className='text-blue-900 font-bold text-6xl pl-6'>Contact Us </h1>
-                      <p className='text-blue-900'>Get in touch with us for any inquiries or consultation.</p>
+                    <div className='pt-24 sm:pt-30 md:pl-[30%]'>
+                       <h1 className='text-center text-4xl font-bold text-blue-900 sm:text-6xl'>Contact Us</h1>
+                      <p className='mt-2 text-center text-blue-900'>Get in touch with us for any inquiries or consultation.</p>
 
                     </div>
 
@@ -23,13 +23,13 @@ const Contact = () => {
 
           <div className='grid grid-cols-1 md:grid-cols-2  gap-3 p-5 bg-gray-100 '>
 
-            <div className="w-full max-w-2xl mx-auto p-6">
+            <div className="mx-auto w-full max-w-2xl p-2 sm:p-6">
               <h2 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-4">
                 Get In Touch <span className="h-[1px] bg-gray-300 flex-grow"></span>
               </h2>
 
               {/* Interactive Map Iframe Container */}
-              <div className="w-full h-[250px] sm:h-[300px] p-4">
+              <div className="h-[250px] w-full p-0 sm:h-[300px] sm:p-4">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.067027976258!2d39.24892007430657!3d-6.761681766118874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d7036d3b489%3A0x3f1923f88a4ce827!2sNIB-Plan%20Consult%20Ltd!5e0!3m2!1sen!2stz!4v1782952279850!5m2!1sen!2stz"// Replace this URL with your custom embed link
                   width="100%"
@@ -59,27 +59,27 @@ const Contact = () => {
             </div>
 
 
-            <div className='w-full max-w-2xl mx-auto p-6'>
-                <h2 className="text-xl font-bold text-blue-900 mb-4 flex items-center gap-4">
-                Our Office <span className="h-[1px] bg-gray-300 flex-grow"></span>
+            <div className='mx-auto w-full max-w-2xl p-2 sm:p-6'>
+                <h2 className="mb-4 flex items-center gap-4 text-xl font-bold text-blue-900">
+                Send a Message <span className="h-[1px] flex-grow bg-gray-300"></span>
               </h2>
 
               <form action="submit" className='flex flex-col gap-3'>
                 <input type="text" placeholder='Enter your name...'
-                className='border border-white bg-white w-3/4 p-4 rounded-xl' />
+                className='w-full rounded-xl border border-white bg-white p-4' />
 
                 <input type="email" placeholder='Email Address...'
-                className='border border-white bg-white w-3/4 p-4 rounded-xl' />
+                className='w-full rounded-xl border border-white bg-white p-4' />
 
                 <input type="tel" placeholder='Phone Number...'
-                className='border border-white bg-white w-3/4 p-4 rounded-xl' />
+                className='w-full rounded-xl border border-white bg-white p-4' />
 
                  <textarea type="message" placeholder='Message...'
-                 className='border border-white bg-white w-3/4 p-4 pb-30 rounded-xl h-40' />
+                 className='h-40 w-full rounded-xl border border-white bg-white p-4' />
 
-                 <button className='text-white border-blue-900 bg-blue-900 w-3/4 rounded-xl p-3'>Send Message</button>
+                 <button className='w-full rounded-xl border-blue-900 bg-blue-900 p-3 text-white'>Send Message</button>
 
-                 <p className='pl-15'>or email us directly at:  <a
+                 <p className='text-center'>or email us directly at:  <a
                     href="mailto:info@nibplan.co.tz"
                     className="text-blue-900 font-bold hover:underline transition-all"
                   >
