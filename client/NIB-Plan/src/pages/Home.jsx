@@ -3,6 +3,7 @@ import bgImage from "../assets/bg_image2.jpg";
 import { experience, skills } from "../assets/assets.js";
 import ScrollReveal from "../components/ScrollReveal.jsx";
 import Footer from "../components/Footer.jsx";
+import StatCounter from "../components/StatCounter.jsx";
 
 const projectApproach = [
   { step: "01", title: "Understand", description: "We begin with site context, project objectives, stakeholder needs and the technical information required for sound decisions." },
@@ -88,13 +89,10 @@ const Home = () => (
 
     <section className="flex flex-col items-center bg-gray-200 px-5 py-10 sm:px-8">
       <ScrollReveal direction="left"><h2 className="text-center text-2xl font-bold text-blue-900 sm:text-3xl">About NIB-Plan Consult Ltd</h2></ScrollReveal>
-      <div className="grid w-full max-w-4xl grid-cols-1 gap-5 py-6 md:grid-cols-2">
+      <div className="grid w-full max-w-3xl grid-cols-1 gap-6 py-8 sm:grid-cols-2">
         {experience.map((item, index) => (
           <ScrollReveal key={item.years} direction={index % 2 ? "right" : "left"}>
-            <div className="flex gap-4 rounded border border-white bg-white p-5 sm:px-8">
-              <p className="text-4xl font-bold text-blue-900">{item.years}</p>
-              <div><p className="font-bold">{item.description}</p><p className="text-sm text-gray-500">{item.description2}</p></div>
-            </div>
+            <StatCounter value={item.years} title={item.description} subtitle={item.description2} />
           </ScrollReveal>
         ))}
       </div>
